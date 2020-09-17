@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Tijdmachine, deel 1</title>
+    <script>
+      function ga() {
+        document.getElementById("second").innerHTML = "Laden...";
+        setTimeout(ga2, 5000);
+      }
+      function ga2() {
+        document.getElementById("third").innerHTML = "Stap in de tijdmachine <br>Goede reis naar " + document.getElementById("jaartal").value;
+	var audio = new Audio('https://tijdmachine.robbevanherck.be/sound.mp3');
+	audio.play();
+      }
+    </script>
+    <style>
+      body {
+        background-color: black;
+        color: #00FF00;
+        text-align: center;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="first">
+      Naar welke tijd wil je reizen? <br>
+      <input type="text" id="jaartal" /><input type="submit" value="GA!" onClick="ga()" />
+    </div>
+    <div id="second"></div>
+    <div id="third"></div>
+  </body>
+</html>
